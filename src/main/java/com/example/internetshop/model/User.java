@@ -37,8 +37,6 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Address> addresses = new ArrayList<>();
 
-//    @ManyToOne(optional = false)
-//    @JoinColumn(name = "role_id")
-//    private Role role;
+
 
 }

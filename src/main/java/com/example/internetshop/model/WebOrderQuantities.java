@@ -15,8 +15,8 @@ public class WebOrderQuantities {
     private Integer id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "menu_id", nullable = false)
-    private Menu menu;
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;

@@ -29,6 +29,6 @@ public class WebOrder {
     private String orderCondition;
 
     @OneToMany(mappedBy = "webOrder", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<WebOrderQuantities> menuQuantity = new ArrayList<>();
+    private List<WebOrderQuantities> orderQuantities = new ArrayList<>();
 
 }
