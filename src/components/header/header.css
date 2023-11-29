@@ -1,0 +1,137 @@
+/*  */
+.header{
+    padding: 50px 50px 50px 50px;
+    z-index: 2;
+    transition: padding 0.5s ease; 
+}
+.sticky-header {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    z-index: 6;
+    padding: 20px 50px; /* Измененные значения для прикрепленного хедера */
+    transition: padding 0.5s; /* Добавлен переход для плавности изменения */
+
+  }
+
+
+.header__row{
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+
+}
+.header__logo img{
+    width: 25px;
+    height: 25px;
+}
+.header__logo span{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.header__nav {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4rem;
+    letter-spacing: 0.02rem;
+}
+.header__nav ul{
+    display: flex;
+    column-gap: 45px;
+    align-items: center;
+    margin-bottom: 0px;
+    justify-content: center;
+}
+
+.header__nav a{
+    transition: color 0.5s ease;
+}
+
+.header__nav a:hover {
+    color: var(--accentColor);
+}
+
+.btn__phone{
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
+    align-items: center;
+     
+    
+}
+
+.header__phone span {
+    transition: color 0.5s ease;
+}
+
+.header__phone span:hover {
+    color: var(--accentColor);
+}
+
+.header__phone img {
+    width: 17px;
+    height: 17px;
+    overflow: hidden;
+    margin-left: 5px;
+    transition: transform 0.5s ease;
+}
+
+.btn__phone:hover img {
+    animation: pulse 1s infinite; /* Запуск анимации на img при наведении */
+}
+
+
+
+.btn__phone {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    transition: border 0.5s ease;
+    transition: padding 0.5s ease;
+}
+
+
+.btn__phone:hover {
+    border: 2px solid var(--accentColor); 
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+/* .header__basket{
+
+} */
+
+.colored-block {
+    width: 705px;
+    height: 826px;
+    background-color: var(--backgroundColor);
+    align-self: flex-end;
+    margin-top: auto;
+    position: absolute;
+    z-index: -1; /* Устанавливаем меньший z-index для colored-block */
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.4); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}

@@ -1,0 +1,23 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+:root{
+    --textColor: #000;
+    --accentColor: #6E9C9F;
+    --backgroundColor: #F1EADC;
+    --priceColor: #998E78;
+}
+
+
+body{
+font-family: 'Raleway', sans-serif;
+color: var(--textColor);
+}
+
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+a{
+    color: var(--textColor);
+}

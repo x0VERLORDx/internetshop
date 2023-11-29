@@ -1,0 +1,59 @@
+.promo{
+    z-index: 2;
+    padding: 0px 50px 130px 50px;
+}
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50;
+}
+.promo__content{
+    display: flex;
+    justify-content: space-between;
+}
+  
+  .promo__slider,
+  .promo__img-container {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+ 
+  .promo__img-container{
+    position: relative;
+    
+  }
+.promo__img-container img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Не превышает 100% ширины блока */
+    max-height: 100%; /* Не превышает 100% высоты блока (если есть) */ 
+}
+.promoImg1 {
+    width: 30vw; /* 50% от ширины родительского блока */
+    max-width: 410px; /* Максимальная ширина */
+    height: auto; /* Автоматическое соотношение сторон для предотвращения искажений */
+    max-height: 646px; /* Максимальная высота */
+    right: 0; 
+    position: absolute; /* Используем относительное позиционирование */
+}
+
+.promoImg2 {
+    width: 23vw; 
+    max-width: 197px;
+    max-height: 197px;
+    height: auto;
+    position: relative;
+    top: 28%;
+    left: 84%;
+}
+
+.promoImg3 {
+    width: 26vw; 
+    max-width: 190px;
+    max-height: 318px;
+    height: auto;
+    position: relative;
+    top: 25%;
+    right: -12%;
+}

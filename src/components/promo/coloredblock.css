@@ -1,0 +1,15 @@
+.app-container {
+    display: flex;
+    flex-direction: column;/* Добавлено для позиционирования дочерних элементов */
+}
+
+.colored-block {
+    max-width: 705px;
+    max-height: 826px;
+    background-color: var(--backgroundColor);
+    align-self: flex-end;
+    margin-top: 0; /* Изменено на 0, чтобы снять верхний отступ */
+    top: 0; /* Установлено в 0, чтобы разместить вверху */
+    right: 0;
+    z-index: -1;
+}
