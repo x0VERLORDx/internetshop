@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 @Service
@@ -17,7 +15,7 @@ public class ImgService {
     @Autowired
     private ImgDao imgDao;
 
-    public void addImg() throws IOException, SQLException {
+    public void addImg() throws IOException{
         ImgTest img = new ImgTest();
         img.setImage(Files.readAllBytes(Paths.get("C:\\Users\\OVERLORD\\IdeaProjects\\InternetShop\\src\\img\\images\\photo-header_3.png")));
         imgDao.save(img);//        File file = new File("photo-header_3.png");
