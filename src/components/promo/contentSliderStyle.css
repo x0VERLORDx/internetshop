@@ -30,7 +30,7 @@
     height: 67px;
     background-color: rgba(110, 156, 159, 0.10);
     border: none; /* Убираем стандартную рамку */
-    transition: border 0.3s ease; /* Добавляем плавный переход для рамки */
+    transition: border 0.5s ease; /* Добавляем плавный переход для рамки */
     display: flex; /* Добавляем flex-контейнер */
     justify-content: center; /* Центрируем содержимое по горизонтали */
     align-items: center; /* Центрируем содержимое по вертикали */
@@ -46,4 +46,9 @@
     gap: 10px;
     background-color: var(--accentColor);
     color: white;
+    transition: color 0.5s ease;
+  }
+
+  .btn_openshop:hover{
+    background-color: #509498;
   }

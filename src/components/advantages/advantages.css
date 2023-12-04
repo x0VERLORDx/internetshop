@@ -7,14 +7,7 @@
     margin: 0 auto;
     padding: 0 50px;
 }
-.advantuges__title{
-    padding-top: 130px; 
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: 0.8px;
-    padding-bottom: 92px;
-}
+
 
 .conteiner__block{
     display: flex;

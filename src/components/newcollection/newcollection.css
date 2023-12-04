@@ -1,0 +1,36 @@
+.newcollection{
+    padding: 0px 50px 0px 50px;
+}
+
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.newcollection__cards{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+
+.newcollection__btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 65px;
+}
+
+.btn_openshop_null {
+    padding: 22px 50px;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--accentColor);
+    color: var(--accentColor);
+    transition: color 0.5s ease;
+
+  }
+
+  .btn_openshop_null:hover{
+    background-color: var(--accentColor);
+    color: white;
+  }

@@ -3,6 +3,7 @@ import Promo from './components/promo/Proomo.jsx';
 import Newcollection from './components/newcollection/Newcollection.jsx';
 import Advantages from './components/advantages/Advantages.jsx';
 import NewDataCards from './services/NewDataCards.js';
+/* import Arrivals from './components/arrivals/Arrivals.jsx'; */
 
 
 
