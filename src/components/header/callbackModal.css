@@ -1,0 +1,21 @@
+.h2_modal{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.4; /* 35px */
+    letter-spacing: 0.5px;
+  }
+
+  .btn_close{
+    padding: 22px 50px;
+    align-items: center;
+    gap: 10px;
+    border: solid 1px var(--accentColor);
+    margin-top: 35px;
+    color: var(--accentColor);
+    transition: color 0.5s ease;
+  }
+  
+.btn_close:hover{
+  background-color: var(--accentColor);
+  color: white;
+}
