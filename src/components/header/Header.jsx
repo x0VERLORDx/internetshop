@@ -28,7 +28,7 @@ function Header(){
   const handleCallSubmit = async (data) => {
     // Здесь вы можете отправить данные на сервер или выполнить другие действия
     try {
-        const response = await fetch('https://example.com/api/call', {
+        const response = await fetch('http://localhost:8080/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
