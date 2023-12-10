@@ -14,7 +14,7 @@ function ContentSlider({ data } ) {
     const [titles, setTitles] = useState({});
 
   useEffect(() => {
-    fetch('/api/titles')
+    fetch('http://localhost:8080/api/titles')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
