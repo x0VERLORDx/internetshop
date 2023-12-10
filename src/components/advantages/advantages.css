@@ -2,7 +2,7 @@
     padding: 0px 50px 130px 50px;
 }
 
-.container {
+.conteiner {
     max-width: 1800px;
     margin: 0 auto;
     padding: 0 50px;
@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     column-gap: 30px;
-    padding-bottom: 130px;
 }
 .advantuges__title1{
     padding-top: 37px;

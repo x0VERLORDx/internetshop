@@ -1,0 +1,123 @@
+.footer{
+    padding: 100px 50px 100px 50px;
+    background-color: var(--backgroundColor);
+}
+
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.footer__content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container1,
+.container2,
+.container3 {
+  flex: 1;
+  max-width: 50%;
+}
+.footer__logo{
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+    padding-bottom: 97px;
+
+}
+.footer__logo img{
+    width: 25px;
+    height: 25px;
+}
+.footer__logo span{
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.footer__nav {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4rem;
+    letter-spacing: 0.02rem;
+}
+.footer__nav ul{
+    display: flex;
+    column-gap: 45px;
+    align-items: center;
+    margin-bottom: 0px;
+    justify-content: center;
+}
+
+.footer__nav a{
+    transition: color 0.5s ease;
+}
+
+.footer__nav a:hover {
+    color: var(--accentColor);
+}
+
+.footer__root p{
+    padding-bottom: 6px;
+}
+
+.footer__category {
+    display: flex;
+    font-size: 13px;
+    padding-top: 80px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .footer__category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer__category li {
+    text-align: left;
+    margin-bottom: 8px; /* или любой другой отступ, который вы предпочитаете */
+  }
+  .footer__category a{
+    
+    transition: color 0.5s ease;
+}
+
+.footer__category a:hover {
+    color: var(--accentColor);
+}
+  .container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .footer__contact,
+  .footer_social,
+  .footer__visa {
+    margin-bottom: 40px;
+  }
+
+  
+
+  .footer__contact {
+    display: block;
+    margin-bottom: 40px;
+    text-align: right;
+  }
+
+  .footer__contact p{
+    margin-bottom: 8px;
+  }
+
+  .footer_social{
+    display: flex;
+    gap: 30px;
+  }
+
+  .footer_social svg{
+    width: 22px;
+    height: 22px;
+  }

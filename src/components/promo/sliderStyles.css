@@ -21,16 +21,3 @@
     width: 30px;
     height: 2px;
   }
-
-  .slick-dots li button::before {
-    background-color: #D1D1D1;
-    border: none;
-    content: '';
-    height: 4px;
-    width: 30px;
-    outline: none;
-  }
-  
-  .slick-dots li[class="slick-active"] button {
-    background: #000;
-  }
