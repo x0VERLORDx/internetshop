@@ -36,7 +36,7 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
       <form onSubmit={handleSubmit(submitHandler)} className="modalform">
         <label></label>
         <Controller
-          name="firstName"
+          name="name"
           /* className={`modal_input ${errors.firstName ? 'error' : ''} ${field.isValid ? 'valid' : ''}`} */
           control={control}
           defaultValue="" // Установите начальное значение
@@ -56,19 +56,20 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
         />
         {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
         <Controller
-          name="lastName"
+          name="email"
           control={control}
           defaultValue=""
           rules={{ required: 'Введіть прізвище',
           pattern: {
-            value: /^[а-яґєїі-]{2,20}$/i,
+            //email pattern
+            value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
             message: "Перевірте правильність набору"
           }
          }}
          render={({ field }) => (
           <input
             className={`modal_input ${errors.lastName ? 'error' : ''} ${isValid ? 'valid' : ''}`}
-            placeholder="Шевченко"
+            placeholder="levchienko1998@gmail.com"
             {...field}/>
             )}
             />
@@ -76,18 +77,19 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
 
         <label></label>
         <Controller
-          name="phoneNumber"
+          name="phone"
           control={control}
           defaultValue=""
           rules={{ required: 'Введіть номер телефону',
           pattern: {
-            value: /^\+380\d{9}$/,
+            //remove country code from pattern
+            value: /\d{10}$/,
             message: "Перевірте правильність набору"
           } }}
           render={({ field }) => (
             <input
               className={`modal_input ${errors.phoneNumber ? 'error' : ''} ${isValid ? 'valid' : ''}`}
-              placeholder="+380999105528"
+              placeholder="0999105528"
               {...field}
             />
           )}
