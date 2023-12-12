@@ -18,7 +18,7 @@ newDataCards.getAllCards().then(res => res.data.results.forEach(item => console.
 
 function Home() {
     return (
-        <div className='Home'>
+        <div className='home'>
         <Header />
         <Promo />
         <Newcollection />

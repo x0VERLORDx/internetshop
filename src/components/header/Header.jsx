@@ -5,6 +5,7 @@ import bagsImg from './../../img/icons/shopping-bags.svg';
 import userImg from './../../img/icons/user.svg';
 /* import Modal from 'react-modal'; */
 import CallModal from './CallModal';
+import { Link } from 'react-router-dom';
 import './header.css';
 
 /* function handleClickPhone() {
@@ -80,9 +81,9 @@ function Header(){
 
                     <nav className="header__nav">
                         <ul>
-                            <li><a href="#!">Головна</a></li>
-                            <li><a href="#!">Магазин</a></li>
-                            <li><a href="#!">Про нас</a></li>
+                            <li><Link to="/">Головна</Link></li>
+                            <li><Link to="/shop">Магазин</Link></li>
+                            <li><Link to="/about">Про нас</Link></li>
                             <li><a href="#!">Контакти</a></li>
                         </ul>
                     </nav>
