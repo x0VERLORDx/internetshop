@@ -17,6 +17,7 @@ public class TestController {
     public void addImg() throws  IOException {
         imgService.addImg();
     }
+    @CrossOrigin
     @GetMapping("/titles")
     public String returnTitles() {
         String[] titles = new String[]{"hjglk","fdhj"};
