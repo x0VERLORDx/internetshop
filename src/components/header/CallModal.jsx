@@ -35,6 +35,7 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
       <h2 className="h2_modal">Замовити зворотній дзвінок</h2>
       <form onSubmit={handleSubmit(submitHandler)} className="modalform">
         <label></label>
+        {errors.name && <p className="error-message">{errors.name.message}</p>}
         <Controller
           name="name"
           /* className={`modal_input ${errors.firstName ? 'error' : ''} ${field.isValid ? 'valid' : ''}`} */
@@ -54,7 +55,8 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
             />
         )}
         />
-        {errors.firstName && <p className="error-message">{errors.firstName.message}</p>}
+        
+        {errors.email && <p className="error-message">{errors.email.message}</p>}
         <Controller
           name="email"
           control={control}
@@ -73,9 +75,11 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
             {...field}/>
             )}
             />
-        {errors.lastName && <p className="error-message">{errors.lastName.message}</p>}
+       
 
         <label></label>
+
+        {errors.phone && <p className="error-message">{errors.phone.message}</p>}
         <Controller
           name="phone"
           control={control}
@@ -83,18 +87,18 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
           rules={{ required: 'Введіть номер телефону',
           pattern: {
             //remove country code from pattern
-            value: /\d{10}$/,
+            value: /^\+380\d{9}$/,
             message: "Перевірте правильність набору"
           } }}
           render={({ field }) => (
             <input
               className={`modal_input ${errors.phoneNumber ? 'error' : ''} ${isValid ? 'valid' : ''}`}
-              placeholder="0999105528"
+              placeholder="+380999105528"
               {...field}
             />
           )}
         />
-        {errors.phoneNumber && <p className="error-message">{errors.phoneNumber.message}</p>}
+        
 
         <button className="btn_submitcall"  type="submit" >Замовити дзвінок</button>
       </form>

@@ -13,7 +13,7 @@ const CallbackModal = ({ isOpen, onRequestClose }) => {
       overlayClassName="react-modal-overlay"
     >
       <h2 className="h2_modal">Чудово! Ми незабаром вам передзвонимо.</h2>
-      <button className="btn_close" onClick={onRequestClose}>Закрыть</button>
+      <button className="btn_close" onClick={onRequestClose}>Закрити</button>
     </Modal>
   );
 };
