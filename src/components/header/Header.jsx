@@ -84,7 +84,7 @@ function Header(){
                             <li><Link to="/">Головна</Link></li>
                             <li><Link to="/shop">Магазин</Link></li>
                             <li><Link to="/about">Про нас</Link></li>
-                            <li><a href="#!">Контакти</a></li>
+                            <li><Link to="/contact">Контакти</Link></li>
                         </ul>
                     </nav>
                     <div className="header__phone">

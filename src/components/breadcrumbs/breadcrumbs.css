@@ -1,6 +1,8 @@
-.breadcrumbs-container {
-    padding: 0px 50px 0px 50px;
+.breadcrumbs-conteiner {
+    padding: 145px 50px 84px 50px;
   }
+  
+
   
   .breadcrumb-link {
     font-size: 17px;
@@ -9,12 +11,13 @@
     letter-spacing: 0.34px;
     color: black; /* Цвет ссылок */
     text-decoration: none; /* Убираем подчеркивание */
-    margin-right: 5px;
+    margin-right: 13px;
     transition: color 0.5s ease;
   }
   
 .breadcrumb-link:hover{
     color: var(--accentColor); 
+    border-bottom/*  */: solid 1px var(--accentColor);
 }
   .breadcrumb-text {
     color: #909090;
@@ -22,7 +25,6 @@
     font-weight: 500;
     line-height: 140%; /* 23.8px */
     letter-spacing: 0.34px;
-    margin-right: 13px;
   }
 
   .breadcrumb-separator {

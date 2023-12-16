@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import About from './components/aboutUs/AboutUs';
 import Shop from './components/shop/Shop';
-/* import Contact from './Contact'; */
-
+import Contact from './components/contactus/Contact';
 const App = () => {
   return (
     <Router>
@@ -12,8 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/about" element={<About />} />
-        
-        {/* <Route path="/contact" component={Contact} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,83 @@
+.aboutusContent {
+    padding: 50px 50px 0px 50px;
+    
+  }
+
+  .container{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Один столбец */
+    grid-gap: 20px;
+  }
+  
+  .grid-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 130px;
+  }
+  
+  .aboutusPhoto {
+    width: 445px;
+    height: 550px;
+  }
+
+  .aboutusPhoto img{
+    max-width: 445px;
+    max-height: 550px;
+  }
+
+.aboutusContent__text{
+    max-width: 554px;
+}
+
+
+.aboutusContent__title1{
+    font-size: 25px;
+    font-weight: 500;
+    line-height:  35px;
+    letter-spacing: 0.5px;
+    padding-bottom: 46px;
+}
+
+.aboutusContent__title2{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 23.8px;
+    letter-spacing: 0.34px;
+}
+
+.aboutusContent__btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 130px;
+}
+
+.btn_openshop {
+    padding: 22px 50px;
+    background-color: var(--accentColor);
+    color: white;
+    transition: color 0.5s ease;
+  }
+
+  .btn_openshop:hover{
+    background-color: #509498;
+  }
+
+  /* Пример для экранов с шириной менее 768px */
+@media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Одна колонка вместо двух */
+    }
+  
+    .aboutusPhoto {
+      max-width: 100%; /* Фотография занимает 100% ширины контейнера */
+      max-height: none; /* Сбрасываем максимальную высоту */
+    }
+  }
