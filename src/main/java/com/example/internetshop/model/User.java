@@ -21,7 +21,7 @@ public class User {
     @Column(name = "name", nullable = false, unique = true)
     private String username;
     @JsonIgnore
-    @Column(name = "password", nullable = false, length = 1000)
+    @Column(name = "password", length = 1000)
     private String password;
 
     @Column(name = "email", unique = true, length = 320)

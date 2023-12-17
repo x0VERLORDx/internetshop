@@ -25,8 +25,12 @@ public class WebOrder {
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @Column(name = "order_condition", nullable = false, length = 30)
-    private String orderCondition;
+    @Column(name = "order_condition", length = 30)
+    private String orderCondition = "Pending";
+
+//    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+//    @JoinColumn(name = "web_order_id")
+//    private List<WebOrderQuantities> webOrderQuantities = new ArrayList<>();
 
     @OneToMany(mappedBy = "webOrder", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<WebOrderQuantities> orderQuantities = new ArrayList<>();

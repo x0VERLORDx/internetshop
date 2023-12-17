@@ -25,4 +25,8 @@ public class WebOrderQuantities {
     @JoinColumn(name = "web_order_id", nullable = false)
     private WebOrder webOrder;
 
+//    @ManyToOne(optional = false)
+//    @JoinColumn(name = "web_order_id", nullable = false)
+//    private WebOrder webOrder;
+
 }
