@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-17T20:39:35+0200",
+    date = "2023-12-18T01:21:18+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
@@ -109,7 +109,9 @@ public class WebOrderMapperImpl implements WebOrderMapper {
         String username = null;
         String email = null;
 
-        id = user.getId();
+        if ( user.getId() != null ) {
+            id = user.getId();
+        }
         username = user.getUsername();
         email = user.getEmail();
 

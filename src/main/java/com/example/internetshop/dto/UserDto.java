@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Getter
 public class UserDto implements Serializable {
     @JsonProperty("id")
-    long id;
+    Long id;
     @JsonProperty("username")
     String username;
     @JsonProperty("email")
