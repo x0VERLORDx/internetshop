@@ -43,15 +43,20 @@ public class OrderService {
         }
         WebOrder webOrder = webOrderMapper.toEntity(webOrderDto);   // Method to convert DTO to Entity
         Address address = webOrder.getAddress();
+        address.setUser(user);
+        // If address exists, retrieve it and connect it with the webOrder
+        if (addressDao.existsByAddressLine1IgnoreCaseAndAddressLine2IgnoreCase(address.getAddressLine1(), address.getAddressLine2())){
+            address = addressDao.findByAddressLine1IgnoreCaseAndAddressLine2IgnoreCase(address.getAddressLine1(), address.getAddressLine2());
+        }else {
+            addressDao.save(address);
+        }
         List<WebOrderQuantities> webOrderQuantitiesList = webOrder.getOrderQuantities();
-        //webOrderQuantitiesList.forEach(webOrderQuantities -> se);
-
         for(WebOrderQuantities quantities : webOrderQuantitiesList) {
             quantities.setWebOrder(webOrder);
         }
 
-        address.setUser(user);
-        addressDao.save(address);
+
+
         webOrder.setAddress(address);
         webOrder.setUser(user);
         webOrder = orderDao.save(webOrder);  // Save the order
