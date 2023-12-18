@@ -8,10 +8,12 @@ import com.example.internetshop.model.Address;
 import com.example.internetshop.model.User;
 import com.example.internetshop.model.WebOrder;
 import com.example.internetshop.model.WebOrderQuantities;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -32,16 +34,24 @@ public class OrderService {
     }
 
     public WebOrderDto addOrder(WebOrderDto webOrderDto) {
+        WebOrder webOrder = webOrderMapper.toEntity(webOrderDto);// Method to convert DTO to Entity
         UserDto userDto = webOrderDto.getUser();
         User user = new User();
+
         if (userDto.getId()==0){
             user.setUsername(userDto.getUsername());
             user.setEmail(userDto.getEmail());
-            userDao.save(user);
-        }else {
-            user = userDao.findById(userDto.getId()).orElseThrow(() -> new RuntimeException("User not found"));
+
+            Optional<User> existingUser = userDao.findByUsernameAndEmail(user.getUsername(), user.getEmail());
+            if (existingUser.isPresent()) {
+                user = existingUser.get();
+            } else {
+                userDao.save(user);
+            }
+        } else {
+            user = userDao.findById(userDto.getId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
         }
-        WebOrder webOrder = webOrderMapper.toEntity(webOrderDto);   // Method to convert DTO to Entity
+
         Address address = webOrder.getAddress();
         address.setUser(user);
         // If address exists, retrieve it and connect it with the webOrder
