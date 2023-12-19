@@ -1,0 +1,10 @@
+.customMarker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    z-index: 2;
+    background-color: red; /* Измените цвет, чтобы убедиться, что стили применяются */
+    border-radius: 50%;
+  }

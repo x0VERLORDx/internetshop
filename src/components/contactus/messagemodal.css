@@ -1,0 +1,23 @@
+.messageModal{
+    max-width: 490px;
+}
+.btn_submitcall{
+    padding: 22px 50px;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--accentColor);
+    color: white;
+    transition: color 0.5s ease;
+}
+
+.btn_submitcall:hover{
+    background-color: #509498;
+}
+
+
+ .success-message_btn{
+    border: 1px solid var(--backgroundColor);
+    padding: 10px;
+    margin-top: 30px;
+ }
+

@@ -1,0 +1,32 @@
+
+.contact__map {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+    padding: 50px 50px 130px 50px;
+    z-index: 5;
+}
+
+.conteiner{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.contact__info{
+    padding: 0px 0px 130px 50px;
+    display: flex;
+    gap: 130px;
+}
+.contact__column {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.34px;   
+}
+.contact__title_column {
+    padding-bottom: 19px;
+}
+.messageModal{
+    margin-bottom: 130px;
+}

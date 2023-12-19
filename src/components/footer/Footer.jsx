@@ -2,12 +2,13 @@ import React from 'react';
 import logoImg from './../../img/icons/logo.svg';
 import visa from './../../img/socials/visa-mastercard.png';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { phoneNumber, emailAddress } from '../constants';
 
 import './footer.css';
 
 const Footer = () => {
-    const phoneNumber = '+380999115784';
-  const emailAddress = 'womazing@gmail.com';
+/*     const phoneNumber = '+380999115784';
+  const emailAddress = 'womazing@gmail.com'; */
     return ( 
 
     <section className="footer">
