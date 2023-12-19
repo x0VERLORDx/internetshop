@@ -1,0 +1,16 @@
+.shop__title{
+    padding: 50px 50px 0px 50px;
+
+}
+
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.shop_title_content{
+        font-size: 55px;
+        font-weight: 500;
+        letter-spacing: 1.1px;
+      }
