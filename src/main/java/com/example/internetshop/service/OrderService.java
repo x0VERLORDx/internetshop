@@ -41,17 +41,21 @@ public class OrderService {
         if (userDto.getId()==0){
             user.setUsername(userDto.getUsername());
             user.setEmail(userDto.getEmail());
+            user.setPhone(userDto.getPhone());
 
             Optional<User> existingUser = userDao.findByUsernameAndEmail(user.getUsername(), user.getEmail());
             if (existingUser.isPresent()) {
                 user = existingUser.get();
             } else {
+
                 userDao.save(user);
             }
         } else {
             user = userDao.findById(userDto.getId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
         }
-
+if (user.getPhone() == null || !user.getPhone().equals(userDto.getPhone())){
+    user.setPhone(userDto.getPhone());
+}
         Address address = webOrder.getAddress();
         address.setUser(user);
         // If address exists, retrieve it and connect it with the webOrder
