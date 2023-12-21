@@ -17,13 +17,12 @@ public class Color {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToMany
-    @JoinTable(name = "color_products",
-            joinColumns = @JoinColumn(name = "color_id"),
-            inverseJoinColumns = @JoinColumn(name = "products_id"))
-    private List<Product> products = new ArrayList<>();
 
-    @Column(name = "product_color", nullable = false)
-    private String productColor;
+
+    @Column(name = "color", nullable = false)
+    private String color;
+
+    @OneToMany(mappedBy = "color", orphanRemoval = true)
+    private List<Inventory> inventories = new ArrayList<>();
 
 }

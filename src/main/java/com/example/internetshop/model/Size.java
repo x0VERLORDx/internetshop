@@ -17,13 +17,12 @@ public class Size {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @ManyToMany
-    @JoinTable(name = "size_products",
-            joinColumns = @JoinColumn(name = "size_id"),
-            inverseJoinColumns = @JoinColumn(name = "products_id"))
-    private List<Product> products = new ArrayList<>();
 
-    @Column(name = "product_size", nullable = false)
-    private String productSize;
+
+    @Column(name = "size", nullable = false)
+    private String size;
+
+    @OneToMany(mappedBy = "size", orphanRemoval = true)
+    private List<Inventory> inventories = new ArrayList<>();
 
 }

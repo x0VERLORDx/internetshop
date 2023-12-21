@@ -14,8 +14,20 @@ public class Inventory {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne(optional = false, orphanRemoval = true)
-    @JoinColumn(name = "product_id", nullable = false, unique = true)
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "color_id", nullable = false)
+    private Color color;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "size_id", nullable = false)
+    private Size size;
+
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
 }

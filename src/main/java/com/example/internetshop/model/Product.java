@@ -3,7 +3,8 @@ package com.example.internetshop.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter
@@ -16,7 +17,7 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "name", nullable = false, unique = true, length = 100)
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
 
 
@@ -24,8 +25,13 @@ public class Product {
     @Column(name = "price")
     private Float price;
 
-    @OneToOne(mappedBy = "product", cascade = CascadeType.REMOVE, optional = false, orphanRemoval = true)
-    private Inventory inventory;
 
+
+
+    @Column(name = "image")
+    private byte[] image;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Inventory> inventories = new ArrayList<>();
 
 }
