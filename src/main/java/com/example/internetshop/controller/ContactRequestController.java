@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/contact")
 public class ContactRequestController {
+    private final ContactRequestService contactRequestService;
     @Autowired
-    private ContactRequestService contactRequestService;
+    public ContactRequestController(ContactRequestService contactRequestService) {
+        this.contactRequestService = contactRequestService;
+    }
+
     @CrossOrigin
     @PostMapping()
     public ResponseEntity contactRequest(@RequestBody @Valid ContactRequestDto contactRequestDto){
