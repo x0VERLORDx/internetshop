@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
@@ -7,6 +8,11 @@ import './shop.css';
 
 
 const Shop = () => {
+  const [selectedProductTitle, setSelectedProductTitle] = useState(null);
+
+  const handleProductClick = (title) => {
+    setSelectedProductTitle(title);
+  };
     return (
          <div className="shop">
                 <div className="header__shop">
@@ -14,11 +20,13 @@ const Shop = () => {
                 </div>
                 <div className="shop__title">
                   <div className="conteiner">
-                <div className="shop_title_content">Магазин</div>
+                <div className="shop_title_content">
+                  {selectedProductTitle || 'Магазин'}
+                  </div>
                 </div>
                 </div>
                 <Breadcrumbs />
-                <ShopContent />
+                <ShopContent onProductClick={handleProductClick} />
 
                 <div className="footer__shop">
                 <Footer />
