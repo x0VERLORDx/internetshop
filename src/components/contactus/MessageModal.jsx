@@ -13,14 +13,28 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
     setSubmitting(true);
 
     try {
-      // Отправка данных
-      await onSubmit(data_message);
-      setSubmitSuccess(true);
-      /* console.log(data_message); */
+      // Отправка данных на сервер
+      const response = await fetch('http://localhost:8080/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data_message),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+      } else {
+        console.error('Ошибка при отправке данных на сервер:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Ошибка при отправке данных на сервер:', error.message);
     } finally {
       setSubmitting(false);
     }
   };
+
+  
 
   const resetForm = () => {
     setSubmitSuccess(false);
