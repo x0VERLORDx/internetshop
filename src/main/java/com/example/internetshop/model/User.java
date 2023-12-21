@@ -37,6 +37,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Address> addresses = new ArrayList<>();
 
-
+    @Column(name = "phone", length = 15)
+    private String phone;
 
 }

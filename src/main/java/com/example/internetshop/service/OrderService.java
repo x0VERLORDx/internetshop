@@ -46,6 +46,7 @@ public class OrderService {
             Optional<User> existingUser = userDao.findByUsernameAndEmail(user.getUsername(), user.getEmail());
             if (existingUser.isPresent()) {
                 user = existingUser.get();
+
             } else {
 
                 userDao.save(user);
@@ -55,6 +56,7 @@ public class OrderService {
         }
 if (user.getPhone() == null || !user.getPhone().equals(userDto.getPhone())){
     user.setPhone(userDto.getPhone());
+    userDao.updatePhoneById(user.getPhone(), user.getId());
 }
         Address address = webOrder.getAddress();
         address.setUser(user);
