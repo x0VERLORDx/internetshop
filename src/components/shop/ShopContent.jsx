@@ -38,6 +38,8 @@ const ShopContent = ({ onProductClick, currentPath }) => {
                   price: item.price,
                   image: item.image,
                   category: item.category,
+                  color: item.color,
+                  size: item.size
                 }));
                 setProducts(adaptedData);
                 setTotalCategoryProducts(adaptedData); // Обновляем все товары, а не только отфильтрованные
