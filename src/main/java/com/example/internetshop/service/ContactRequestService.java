@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ContactRequestService {
+    private final ContactRequestDao contactRequestDao;
     @Autowired
-    private ContactRequestDao contactRequestDao;
+    public ContactRequestService(ContactRequestDao contactRequestDao) {
+        this.contactRequestDao = contactRequestDao;
+    }
 
     public void addRequest(ContactRequestDto contactRequestDto){
         ContactRequest contactRequest = new ContactRequest();

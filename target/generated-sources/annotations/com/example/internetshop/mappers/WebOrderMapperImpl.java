@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-18T01:21:18+0200",
+    date = "2023-12-21T18:41:41+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
@@ -108,14 +108,16 @@ public class WebOrderMapperImpl implements WebOrderMapper {
         long id = 0L;
         String username = null;
         String email = null;
+        String phone = null;
 
         if ( user.getId() != null ) {
             id = user.getId();
         }
         username = user.getUsername();
         email = user.getEmail();
+        phone = user.getPhone();
 
-        UserDto userDto = new UserDto( id, username, email );
+        UserDto userDto = new UserDto( id, username, email, phone );
 
         return userDto;
     }
@@ -146,6 +148,7 @@ public class WebOrderMapperImpl implements WebOrderMapper {
         user.setId( userDto.getId() );
         user.setUsername( userDto.getUsername() );
         user.setEmail( userDto.getEmail() );
+        user.setPhone( userDto.getPhone() );
 
         return user;
     }

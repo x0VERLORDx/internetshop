@@ -25,6 +25,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
       if (response.ok) {
         setSubmitSuccess(true);
       } else {
+        console.log(data_message);
         console.error('Ошибка при отправке данных на сервер:', response.statusText);
       }
     } catch (error) {
@@ -121,7 +122,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
 
         {errors.message_people && <p className="error-message">{errors.message_people.message}</p>}
         <Controller
-          name="message_people"
+          name="message"
           control={control}
           defaultValue=""
           rules={{ required: 'Введіть повідомлення',
