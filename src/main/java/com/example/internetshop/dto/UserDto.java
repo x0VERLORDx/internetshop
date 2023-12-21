@@ -20,11 +20,14 @@ public class UserDto implements Serializable {
     String username;
     @JsonProperty("email")
     String email;
+    @JsonProperty("phone")
+    String phone;
     @JsonCreator
-    public UserDto(@JsonProperty("id") long id, @JsonProperty("username") String username, @JsonProperty("email") String email) {
+    public UserDto(@JsonProperty("id") long id, @JsonProperty("username") String username, @JsonProperty("email") String email, @JsonProperty("phone") String phone) {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.phone = phone;
     }
 
 

@@ -17,7 +17,7 @@ public class ContactRequestDto implements Serializable {
 
     @NotNull
     @NotBlank
-    @Pattern(regexp = "[0-9]{10}")
+    @Pattern(regexp = "^\\+380\\d{9}$")
     String phone;
 
     @NotNull
