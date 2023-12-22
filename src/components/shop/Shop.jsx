@@ -10,9 +10,10 @@ import './shop.css';
 const Shop = () => {
   const [selectedProductTitle, setSelectedProductTitle] = useState(null);
 
-  const handleProductClick = (title) => {
+  const handleProductClick = (title, category) => {
     setSelectedProductTitle(title);
   };
+
     return (
          <div className="shop">
                 <div className="header__shop">
@@ -26,8 +27,9 @@ const Shop = () => {
                 </div>
                 </div>
                 <Breadcrumbs />
-                <ShopContent onProductClick={handleProductClick} />
-
+                <ShopContent
+                  onProductClick={handleProductClick}
+                />
                 <div className="footer__shop">
                 <Footer />
                 </div>

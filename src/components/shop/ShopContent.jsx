@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-/* import { allProducts } from './test';   */// Импорт данных
 import CardInfo from './CardInfo';
 import './shopContent.css';
 
-const ShopContent = ({ onProductClick, currentPath }) => {
+const ShopContent = ({ onProductClick, currentPath, updateBreadcrumbs }) => {
     const itemsPerPage = 9; // Количество товаров на странице
     // Закомментировала код для получения данных с сервера
   const [products, setProducts] = useState([]);
@@ -15,13 +14,6 @@ const ShopContent = ({ onProductClick, currentPath }) => {
 
 
   useEffect(() => {
-    // Получение данных о товарах с сервера
-    /* fetch(`http://localhost:8080/api/card_product?page=${currentPage}`)
-      .then(response => response.json())
-      .then(data => setProducts(data))
-      .catch(error => console.error('Error fetching products:', error));
-*/
-
             // Получение данных о товарах с сервера
             fetch('http://localhost:8080/card')
               .then(response => {
@@ -39,19 +31,20 @@ const ShopContent = ({ onProductClick, currentPath }) => {
                   image: item.image,
                   category: item.category,
                   color: item.color,
-                  size: item.size
+                  size: item.size,
+                  available: item.available,
                 }));
                 setProducts(adaptedData);
                 setTotalCategoryProducts(adaptedData); // Обновляем все товары, а не только отфильтрованные
               })
               .catch(error => console.error('Error fetching products:', error));
-          }, []); // Пустой массив зависимостей означает, что useEffect сработает только при монтировании компонента
+          }, []);
         
 useEffect(() => {
     // Фильтрация товаров по выбранной категории
       const filteredProducts = selectedCategory === 'Всі'
-      ? totalCategoryProducts
-      : totalCategoryProducts.filter(product => product.category === selectedCategory);
+      ? totalCategoryProducts/* allProducts */
+      : totalCategoryProducts/* allProducts */.filter(product => product.category === selectedCategory);
 
       setTotalCategoryProducts(filteredProducts);
 
@@ -89,15 +82,17 @@ useEffect(() => {
         setSelectedProductInfo(product);
         setIsProductInfoVisible(true);
         onProductClick(product.name, product.category);
-      };
-
+    };
 /*       const handleAddToCart = (product) => {
         setCart([...cart, product]);
         setSelectedProductInfo(null);
       }; */
+      const handleGoBack = () => {
+        setIsProductInfoVisible(false);
+      };
           
-    return ( 
-        <div className="shopContent">
+    return (       
+      <div className={`shopContent ${isProductInfoVisible ? 'productInfoVisible' : ''}`}>
             <div className="conteiner">
                 <div className="shop__nav">
                 <div className={`category-menu ${isProductInfoVisible ? 'hidden' : ''}`}>
@@ -160,16 +155,19 @@ useEffect(() => {
               </button>
             )}
           </div>
-            </div>
-        
+          </div>
+          
             {isProductInfoVisible && (
-        <div className="selected-product-info">
-          <CardInfo selectedProductInfo={selectedProductInfo} />
-        </div>
-      )}
+                <div className="selected-product-info">
+                  
+                  <CardInfo selectedProductInfo={selectedProductInfo} onGoBack={handleGoBack}/>
+                  
+                </div>      
+              )}
+
             </div>
     </div>
-     );
-            }
+  );
+}
  
 export default ShopContent;

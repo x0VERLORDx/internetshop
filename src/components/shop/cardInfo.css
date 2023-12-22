@@ -1,0 +1,123 @@
+.cardInfo{
+    display: flex;
+    gap: 74px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cardInfo_img{
+    max-width: 540px;
+    max-height: 800px;
+    overflow: hidden; 
+}
+
+.cardInfo_select{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 59px;
+}
+
+.cardInfo_price{
+    color: var(--priceColor);
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.8px;
+}
+
+.cardInfo_size{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+}
+
+.sizeButton{
+    padding: 9px 13px 8px 13px;
+    margin-right: 14px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.sizeButton.active{
+    color: white;
+    background-color: black;
+  }
+
+  .cardInfo_available{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+  }
+
+  .cardInfo_color{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+  }
+
+  .colorButton{
+    width: 41px;
+    height: 41px;
+    border-radius: 100px;
+    margin-right: 14px;
+    border: none;
+    cursor: pointer;
+    filter: opacity(0.4); 
+    transition: border 0.5s ease;
+  }
+
+.cardInfo_group{
+  display: flex;
+  gap:20px;
+  align-items: center;
+}
+.cardInfo_available{
+  filter: opacity(0.5);
+}
+  .colorButton.active{
+    border: 1px solid black;
+    filter: opacity(1);
+  }
+
+  .btn_addBusket {
+    padding: 22px 50px;
+    background-color: var(--accentColor);
+    color: white;
+    transition: color 0.5s ease;
+  }
+
+  .btn_addBusket:hover{
+    background-color: #509498;
+  }
+.btn-group{
+  display: flex;
+  gap: 20px;
+}
+  .btn_goBack{
+    display: block;
+    padding: 22px 50px;
+    border: 1px solid black;
+    color: black;
+    transition: color 0.5s ease;
+      
+  }
+  .btn_goBack:hover {
+    color: white;
+    background-color: black;
+  }
+
+  @media (max-width: 768px) {
+    .cardInfo {
+      flex-direction: column; /* Переключаемся на вертикальное расположение на мобильных устройствах */
+      align-items: center; /* Центрируем элементы по горизонтали на мобильных устройствах */
+    }
+  
+    .cardInfo_img {
+      max-height: 100%; /* Занимаем всю доступную высоту на мобильных устройствах */
+    }
+  }
+  
