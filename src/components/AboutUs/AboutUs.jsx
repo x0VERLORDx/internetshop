@@ -4,7 +4,7 @@ import Footer from '../footer/Footer';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import AboutUsContent from './AboutUsContent';
 
-import './aboutus.css';
+import './aboutUs.css';
 
 const About = () => {
   return (
