@@ -12,11 +12,37 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
   const { control, handleSubmit, formState: { errors, isValid } } = useForm();
   const [callbackModalOpen, setCallbackModalOpen] = useState(false);
 
-  const submitHandler = (data) => {
-    // Выполняйте дополнительные действия перед отправкой данных, если необходимо
-    onSubmit(data);
-    onRequestClose();
-    setCallbackModalOpen(true);
+  const submitHandler = async (data) => {
+    try {
+      // Отправка данных на сервер с использованием fetch
+      const response = await fetch('http://localhost:8080/callPhone', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      // Выполняйте дополнительные действия после успешной отправки, если необходимо
+      const responseData = await response.json();
+      console.log(responseData);
+
+      // Вызов функции onSubmit
+      onSubmit(data);
+
+      // Закрытие модального окна
+      onRequestClose();
+
+      // Открытие второго модального окна
+      setCallbackModalOpen(true);
+    } catch (error) {
+      console.error('Ошибка при отправке данных на сервер', error);
+      // Обработка ошибок, если необходимо
+    }
   };
 
   const closeCallbackModal = () => {
@@ -38,7 +64,6 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
         {errors.name && <p className="error-message">{errors.name.message}</p>}
         <Controller
           name="name"
-          /* className={`modal_input ${errors.firstName ? 'error' : ''} ${field.isValid ? 'valid' : ''}`} */
           control={control}
           defaultValue="" // Установите начальное значение
           rules={{ required: "Введіть ім'я", 
@@ -49,7 +74,7 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
         }}
         render={({ field }) => (
           <input
-              className={`modal_input ${errors.firstName ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+              className={`modal_input ${errors.name ? 'error' : ''} ${isValid ? 'valid' : ''}`}
               placeholder="Тарас"
               {...field}
             />
@@ -70,7 +95,7 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
          }}
          render={({ field }) => (
           <input
-            className={`modal_input ${errors.lastName ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+            className={`modal_input ${errors.email ? 'error' : ''} ${isValid ? 'valid' : ''}`}
             placeholder="levchienko1998@gmail.com"
             {...field}/>
             )}
@@ -92,7 +117,7 @@ const CallModal = ({ isOpen, onRequestClose, onSubmit }) => {
           } }}
           render={({ field }) => (
             <input
-              className={`modal_input ${errors.phoneNumber ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+              className={`modal_input ${errors.phone ? 'error' : ''} ${isValid ? 'valid' : ''}`}
               placeholder="+380999105528"
               {...field}
             />

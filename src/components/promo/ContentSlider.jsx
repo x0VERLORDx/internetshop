@@ -1,15 +1,13 @@
 import arowdownImg from './../../img/icons/arrow-down.svg';
 import './contentSliderStyle.css';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function handleClickArrowDown() {
     // Логика для кнопки со стрелкой вниз
     console.log('Переход вниз');
   }
   
-  function handleClickOpenShop() {
-    console.log('Открытие старницы магазина');
-  }
 function ContentSlider({ data } ) {
     const [titles, setTitles] = useState({});
 
@@ -36,13 +34,12 @@ function ContentSlider({ data } ) {
         <section className="content-slider">
   <h1 className='title1_slide'>{/* {data.title1} */}Нові надходження в цьому сезоні</h1>
   <h3 className='title2_slide'>{/* {data.title2} */}Витончені поєднання та оксамитові відтінки - ось те, що ви шукали цього сезону. Час досліджувати.</h3>
-  <div className='btn_slider'>
+  <div className='btn_slider_shop'>
     <button className='btn_arrowdown' onClick={handleClickArrowDown}>
       <img  src={arowdownImg} alt='Стрелка_вниз'/>
     </button>
-    <button className='btn_openshop' onClick={handleClickOpenShop}>
-        Відкрити магазин
-    </button>
+
+    <Link className='goMagazine' to="/shop">Відкрити магазин</Link>
     </div>
     </section>
 )

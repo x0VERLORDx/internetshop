@@ -57,7 +57,6 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
         {errors.name && <p className="error-message">{errors.name.message}</p>}
         <Controller
           name="name"
-          /* className={`modal_input ${errors.firstName ? 'error' : ''} ${field.isValid ? 'valid' : ''}`} */
           control={control}
           defaultValue="" // Установите начальное значение
           rules={{ required: "Введіть ім'я", 
@@ -68,7 +67,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
         }}
         render={({ field }) => (
           <input
-              className={`modal_input ${errors.firstName ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+              className={`modal_input ${errors.name ? 'error' : ''} ${isValid ? 'valid' : ''}`}
               placeholder="Тарас"
               {...field}
             />
@@ -89,7 +88,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
          }}
          render={({ field }) => (
           <input
-            className={`modal_input ${errors.lastName ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+            className={`modal_input ${errors.email ? 'error' : ''} ${isValid ? 'valid' : ''}`}
             placeholder="levchienko1998@gmail.com"
             {...field}/>
             )}
@@ -111,7 +110,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
           } }}
           render={({ field }) => (
             <input
-              className={`modal_input ${errors.phoneNumber ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+              className={`modal_input ${errors.phone ? 'error' : ''} ${isValid ? 'valid' : ''}`}
               placeholder="+380999105528"
               {...field}
             />
@@ -122,7 +121,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
 
         {errors.message_people && <p className="error-message">{errors.message_people.message}</p>}
         <Controller
-          name="message"
+          name="message_people"
           control={control}
           defaultValue=""
           rules={{ required: 'Введіть повідомлення',
@@ -132,7 +131,7 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
           } }}
           render={({ field }) => (
             <textarea
-              className={`modal_input ${errors.messagePeople ? 'error' : ''} ${isValid ? 'valid' : ''}`}
+              className={`modal_input ${errors.message_people ? 'error' : ''} ${isValid ? 'valid' : ''}`}
               placeholder="Повідомлення"
               {...field}
             />
@@ -152,6 +151,9 @@ const MessageModal = ({ isOpen, onRequestClose, onSubmit }) => {
       
   );
 };
+
+
+
 
 
 

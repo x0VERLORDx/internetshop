@@ -109,9 +109,31 @@
     padding: 5px;
 }
 
-/* .header__basket{
+.header__basket{
+    border: none;
+    padding: 0;
+    transition: border 0.5s ease;
+    transition: padding 0.5s ease;
+}
 
-} */
+.header__basket:hover {
+    border: 2px solid var(--accentColor); 
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+.header__user{
+    border: none;
+    padding: 0;
+    transition: border 0.5s ease;
+    transition: padding 0.5s ease;
+}
+
+.header__user:hover {
+    border: 2px solid var(--accentColor); 
+    border-radius: 5px; 
+    padding: 5px;
+}
 
 .colored-block {
     width: 705px;
@@ -122,7 +144,9 @@
     position: absolute;
     z-index: -1; /* Устанавливаем меньший z-index для colored-block */
 }
-
+.btn__basket.basket-added {
+    animation: scaleUp 0.3s ease-in-out; /* Применяем анимацию увеличения размера */
+  }
 
 @keyframes pulse {
     0% {
@@ -135,3 +159,12 @@
         transform: scale(1); 
     }
 }
+
+@keyframes scaleUp {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2); /* Увеличиваем размер иконки при успешном добавлении */
+    }
+  }

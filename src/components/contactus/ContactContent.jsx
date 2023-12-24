@@ -23,16 +23,16 @@ const ContactContent = () => {
         <div className="contact__info">
         <div className="contact__column">
             <p className='contact__title_column'>Телефон</p>
-            <p><a href={`tel:${phoneNumber}`}>+380 (99) 911 57 84</a></p>
+            <p><a className="contact__columna" href={`tel:${phoneNumber}`}>+380 (99) 911 57 84</a></p>
             </div>
         <div className="contact__column">
             <p className='contact__title_column'>Пошта</p>
-            <p><a href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
+            <p><a className="contact__columna" href={`mailto:${emailAddress}`}>{emailAddress}</a></p>
             
             </div>
         <div className="contact__column">
             <p className='contact__title_column'>Адреса</p>
-            <p><a href={`https://maps.google.com/?q=${encodeURIComponent(adress_URL)}`}
+            <p><a className="contact__columna" href={`https://maps.google.com/?q=${encodeURIComponent(adress_URL)}`}
                 /* https://maps.app.goo.gl/ZsgZXuXRuPCDw4fd9 */
                 target= "blank"
                 rel="noopener noreferrer"

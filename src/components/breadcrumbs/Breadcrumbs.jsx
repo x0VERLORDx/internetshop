@@ -11,6 +11,9 @@ const Breadcrumbs = () => {
     about: 'Про нас',
     shop: 'Магазин',
     contact: 'Контакти',
+    basket: 'Корзина',
+    order: 'Оформлення замовлення', 
+    ordersuccess: 'Замовлення отримано'
   };
 
   return (

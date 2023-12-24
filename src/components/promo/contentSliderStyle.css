@@ -19,7 +19,7 @@
     letter-spacing: 0.4px;
 }
 
-.btn_slider{
+.btn_slider_shop{
     display: flex;
     padding-left: 90px;
     padding-bottom: 130px;
@@ -40,15 +40,16 @@
     border: 2px solid #6E9C9F; /* Добавляем рамку при наведении */
   }
 
-  .btn_openshop {
+
+  .goMagazine{
     padding: 22px 50px;
     align-items: center;
-    gap: 10px;
     background-color: var(--accentColor);
+    border: none;
     color: white;
     transition: color 0.5s ease;
-  }
+}
 
-  .btn_openshop:hover{
+.goMagazine:hover{
     background-color: #509498;
-  }
+}

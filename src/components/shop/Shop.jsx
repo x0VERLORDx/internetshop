@@ -13,6 +13,10 @@ const Shop = () => {
   const handleProductClick = (title, category) => {
     setSelectedProductTitle(title);
   };
+  
+  const updateSelectedProductTitle = (title) => {
+    setSelectedProductTitle(title);
+  };
 
     return (
          <div className="shop">
@@ -29,6 +33,7 @@ const Shop = () => {
                 <Breadcrumbs />
                 <ShopContent
                   onProductClick={handleProductClick}
+                  updateSelectedProductTitle={updateSelectedProductTitle}
                 />
                 <div className="footer__shop">
                 <Footer />

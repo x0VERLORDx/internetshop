@@ -55,6 +55,7 @@ function Header(){
       console.log('Данные для заказа звонка:', data);
     };
     
+    
   
   useEffect(() => {
     const handleScroll = () => {
@@ -99,9 +100,9 @@ function Header(){
                     />
                     </div>
                     <div className="header__basket">
-                        <button className='btn__basket'>
-                            <img src={bagsImg} alt="Basket"/>
-                        </button>
+                    <Link to="/basket" className='btn__basket'>
+                      <img src={bagsImg} alt="Basket" />
+                    </Link>
                     </div>
                     <div className="header__user">
                         <button className='btn__user'>

@@ -57,6 +57,7 @@
 
 .footer__nav a:hover {
     color: var(--accentColor);
+    border-bottom: 1px solid var(--accentColor);
 }
 
 .footer__root p{
@@ -87,6 +88,7 @@
 
 .footer__category a:hover {
     color: var(--accentColor);
+    border-bottom: 1px solid var(--accentColor);
 }
   .container3 {
     display: flex;
@@ -112,12 +114,40 @@
     margin-bottom: 8px;
   }
 
-  .footer_social{
-    display: flex;
-    gap: 30px;
+  .footer__contact a{
+    
+    transition: color 0.5s ease;
+}
+
+.footer__contact a:hover {
+    color: var(--accentColor);
+    border-bottom: 1px solid var(--accentColor);
+}
+
+  .footer_social a{
+    display: inline-block;
+    
+    margin-left: 30px;
+    transition: transform 0.5s ease;
   }
 
-  .footer_social svg{
-    width: 22px;
-    height: 22px;
+.footer_social svg{
+  width: 22px;
+  height: 22px;
+}
+
+.footer_social a:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

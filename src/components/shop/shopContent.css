@@ -32,12 +32,12 @@
   .product-card:hover {
     transform: scale(1.05);
   }
-  button {
+/*   button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+  } */
 
   .product-card__title{
     padding-top: 24px;

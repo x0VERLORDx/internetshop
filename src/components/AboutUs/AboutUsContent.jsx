@@ -1,19 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import aboutusph1 from './../../img/aboutus/photo1.png';
 import aboutusph2 from './../../img/aboutus/photo2.png';
 import './aboutUsContent.css';
 
-/* 
-function handleClickOpenShop() {
-    console.log('Открытие старницы магазина');
-  } */
 
 const AboutUsContent = () => {
-    function handleClickOpenShop() {
-        console.log('Открытие страницы магазина');
-        // Добавьте здесь логику для открытия страницы магазина
-      }
     return ( 
     
     <div className="aboutusContent">
@@ -50,9 +43,7 @@ const AboutUsContent = () => {
     </div>
     
         <div className="aboutusContent__btn">
-    <button className='btn_openshop' onClick={handleClickOpenShop}>
-        Відкрити магазин
-    </button>
+        <Link className='goMagazine' to="/shop">Відкрити магазин</Link>
         </div>
     </div>
     </div>

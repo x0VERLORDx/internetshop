@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+/* import {allProducts} from './test.js'; */
 import CardInfo from './CardInfo';
 import './shopContent.css';
 
-const ShopContent = ({ onProductClick, currentPath, updateBreadcrumbs }) => {
+const ShopContent = ({ onProductClick, currentPath, updateSelectedProductTitle}) => {
     const itemsPerPage = 9; // Количество товаров на странице
     // Закомментировала код для получения данных с сервера
   const [products, setProducts] = useState([]);
@@ -11,7 +12,7 @@ const ShopContent = ({ onProductClick, currentPath, updateBreadcrumbs }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalCategoryProducts, setTotalCategoryProducts] = useState([]);
   const [isProductInfoVisible, setIsProductInfoVisible] = useState(false);
-
+  /* const [randomProducts, setRandomProducts] = useState([]); */
 
   useEffect(() => {
             // Получение данных о товарах с сервера
@@ -48,6 +49,7 @@ useEffect(() => {
 
       setTotalCategoryProducts(filteredProducts);
 
+      
   
       // Рассчитываем индексы товаров для текущей страницы
       const startIndex = (currentPage - 1) * itemsPerPage;
@@ -89,7 +91,19 @@ useEffect(() => {
       }; */
       const handleGoBack = () => {
         setIsProductInfoVisible(false);
+        updateSelectedProductTitle('Магазин'); 
       };
+
+      const getRandomProducts = () => {
+        const shuffledProducts = [...totalCategoryProducts/* allProducts */].sort(() => 0.5 - Math.random());
+        return shuffledProducts.slice(0, Math.min(3, shuffledProducts.length));
+      };
+
+       const handleRandomCardClick = (product) => {
+    setSelectedProductInfo(product);
+    setIsProductInfoVisible(true);
+    onProductClick(product.name, product.category);
+  };
           
     return (       
       <div className={`shopContent ${isProductInfoVisible ? 'productInfoVisible' : ''}`}>
@@ -160,12 +174,17 @@ useEffect(() => {
             {isProductInfoVisible && (
                 <div className="selected-product-info">
                   
-                  <CardInfo selectedProductInfo={selectedProductInfo} onGoBack={handleGoBack}/>
+                  <CardInfo 
+                  selectedProductInfo={selectedProductInfo} 
+                  onGoBack={handleGoBack} 
+                  getRandomProducts={getRandomProducts}
+                  onRandomCardClick={handleRandomCardClick}
+                  />
                   
                 </div>      
               )}
-
             </div>
+           
     </div>
   );
 }

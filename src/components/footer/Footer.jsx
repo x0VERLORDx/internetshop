@@ -4,6 +4,8 @@ import visa from './../../img/socials/visa-mastercard.png';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { phoneNumber, emailAddress } from '../constants';
 
+import { Link } from 'react-router-dom';
+
 import './footer.css';
 
 const Footer = () => {
@@ -29,10 +31,10 @@ const Footer = () => {
             <div className="container2">
                     <nav className="footer__nav">
                         <ul>
-                            <li><a href="#!">Головна</a></li>
-                            <li><a href="#!">Магазин</a></li>
-                            <li><a href="#!">Про нас</a></li>
-                            <li><a href="#!">Контакти</a></li>
+                            <li><Link to="/">Головна</Link></li>
+                            <li><Link to="/shop">Магазин</Link></li>
+                            <li><Link to="/about">Про нас</Link></li>
+                            <li><Link to="/contact">Контакти</Link></li>
                         </ul>
                     </nav>
                     <div className="footer__category">

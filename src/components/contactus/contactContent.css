@@ -26,7 +26,18 @@
 }
 .contact__title_column {
     padding-bottom: 19px;
+
 }
+
+.contact__columna{
+    transition: color 0.5s ease;
+    color: #000;
+ }
+ 
+ .contact__columna:hover {
+     color: var(--accentColor);
+     border-bottom: 1px solid var(--accentColor);
+ }
 .messageModal{
     margin-bottom: 130px;
 }

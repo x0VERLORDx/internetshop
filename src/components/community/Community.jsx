@@ -1,5 +1,5 @@
 import React from 'react';
-/* import { Link } from 'react-router-dom'; */
+import { Link } from 'react-router-dom';
 
 import CommunitySlider from './CommunitySlider';
 import './community.css'
@@ -21,10 +21,7 @@ const Community = () => {
                             Кожна дівчина є унікальною. Однак, ми схожі на мільйон дрібниць.<br /><br /> Womazing шукає ці дрібниці та створює чудові речі, які вигідно підкреслюють переваги кожної дівчини.
                         </h5>
                         <div className="community__page">
-                            <a href="#!">Детальніше про бренд</a>
-                       {/*  <Link to="/brand">
-                            Детальніше про бренд
-                        </Link> */}
+                        <Link to="/about">Детальніше про бренд</Link>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,79 @@
+.successPage__title{
+    padding: 50px 50px 0px 50px;
+
+}
+
+.conteiner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.successPage_title_content{
+        font-size: 55px;
+        font-weight: 500;
+        letter-spacing: 1.1px;
+}
+.successPage_content{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+.orderSuccessPage_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px 0px 50px;
+    margin-bottom: 130px;
+}
+
+.success-message {
+    opacity: 0; /* Начальное значение нулевой прозрачности */
+    animation: fadeInOut 2s ease-in-out; /* Длительность, тип и режим анимации */
+  }
+
+
+.successPage_text{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.title_done{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+.title_done_back{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.34px;
+}
+.goHome{
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 0px;
+    padding: 22px 50px;
+    color: var(--accentColor);
+    line-height: 138.9%; /* 23.613px */
+    letter-spacing: 0.34px;
+    background-color: none;
+    border: 1px solid var(--accentColor);
+    transition: color 0.5 ease;
+}
+
+.goHome:hover{
+    background-color: #509498;
+    color: white;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
