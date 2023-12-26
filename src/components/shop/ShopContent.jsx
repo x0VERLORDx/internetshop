@@ -29,7 +29,7 @@ const ShopContent = ({ onProductClick, currentPath, updateSelectedProductTitle})
                   id: item.id,
                   name: item.name,
                   price: item.price,
-                  image: item.image,
+                  image: arrayBufferToBase64(item.image), // преобразование байтового массива в base64
                   category: item.category,
                   color: item.color,
                   size: item.size,
@@ -45,7 +45,7 @@ useEffect(() => {
     // Фильтрация товаров по выбранной категории
       const filteredProducts = selectedCategory === 'Всі'
       ? totalCategoryProducts/* allProducts */
-      : totalCategoryProducts/* allProducts */.filter(product => product.category === selectedCategory);
+      : totalCategoryProducts/* sallProducts */.filter(product => product.category === selectedCategory);
 
       setTotalCategoryProducts(filteredProducts);
 
@@ -104,6 +104,15 @@ useEffect(() => {
     setIsProductInfoVisible(true);
     onProductClick(product.name, product.category);
   };
+
+  function arrayBufferToBase64(buffer) {
+    let binary = '';
+    let bytes = new Uint8Array(buffer);
+    for (let i = 0; i < bytes.byteLength; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+  }
           
     return (       
       <div className={`shopContent ${isProductInfoVisible ? 'productInfoVisible' : ''}`}>
