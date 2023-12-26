@@ -1,5 +1,6 @@
 package com.example.internetshop.controller;
 
+import com.example.internetshop.dto.CardProductDto;
 import com.example.internetshop.dto.InventoryDto;
 import com.example.internetshop.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,14 @@ public class CardController {
     public CardController(InventoryService inventoryService) {
         this.inventoryService = inventoryService;
     }
+    @CrossOrigin
     @GetMapping("/{id}")
     public List<InventoryDto> getCardByProductId(@PathVariable Integer id){
         return inventoryService.getCardByProductId(id);
+    }
+    @CrossOrigin
+    @GetMapping()
+    public List<CardProductDto> getAllProducts(){
+        return inventoryService.getAllProducts();
     }
 }

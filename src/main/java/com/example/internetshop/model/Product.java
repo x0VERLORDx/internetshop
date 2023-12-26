@@ -34,4 +34,7 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Inventory> inventories = new ArrayList<>();
 
+    @Column(name = "category", length = 50)
+    private String category;
+
 }

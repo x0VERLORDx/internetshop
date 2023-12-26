@@ -9,7 +9,10 @@ import java.io.Serializable;
  */
 @Value
 public class CardProductDto implements Serializable {
+    Integer id;
     String name;
     Float price;
-    byte[] image;
+    String image;
+    String category;
+
 }
