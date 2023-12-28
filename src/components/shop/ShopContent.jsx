@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-/* import {allProducts} from './test.js'; */
+import {allProducts} from './test.js';
 import CardInfo from './CardInfo';
 import './shopContent.css';
 
@@ -14,9 +14,9 @@ const ShopContent = ({ onProductClick, currentPath, updateSelectedProductTitle})
   const [isProductInfoVisible, setIsProductInfoVisible] = useState(false);
   /* const [randomProducts, setRandomProducts] = useState([]); */
 
-  useEffect(() => {
+ /*  useEffect(() => { */
             // Получение данных о товарах с сервера
-            fetch('http://localhost:8080/card')
+            /* fetch('http://localhost:8080/card')
               .then(response => {
                 if (!response.ok) {
                   throw new Error(`HTTP error! Status: ${response.status}`);
@@ -39,13 +39,13 @@ const ShopContent = ({ onProductClick, currentPath, updateSelectedProductTitle})
                 setTotalCategoryProducts(adaptedData); // Обновляем все товары, а не только отфильтрованные
               })
               .catch(error => console.error('Error fetching products:', error));
-          }, []);
+          }, []); */
         
 useEffect(() => {
     // Фильтрация товаров по выбранной категории
       const filteredProducts = selectedCategory === 'Всі'
-      ? totalCategoryProducts/* allProducts */
-      : totalCategoryProducts/* sallProducts */.filter(product => product.category === selectedCategory);
+      ? /* totalCategoryProducts */allProducts
+      : /* totalCategoryProducts */allProducts.filter(product => product.category === selectedCategory);
 
       setTotalCategoryProducts(filteredProducts);
 
@@ -60,7 +60,7 @@ useEffect(() => {
 
   
       setProducts(currentProducts);
-  }, [currentPage, selectedCategory, totalCategoryProducts]);
+  }, [currentPage, selectedCategory, /* totalCategoryProducts */]);
 
         const getPageNumbers = () => {
             const totalPages = Math.ceil(products.length / itemsPerPage);
@@ -95,7 +95,7 @@ useEffect(() => {
       };
 
       const getRandomProducts = () => {
-        const shuffledProducts = [...totalCategoryProducts/* allProducts */].sort(() => 0.5 - Math.random());
+        const shuffledProducts = [.../* totalCategoryProducts */allProducts].sort(() => 0.5 - Math.random());
         return shuffledProducts.slice(0, Math.min(3, shuffledProducts.length));
       };
 
@@ -105,14 +105,14 @@ useEffect(() => {
     onProductClick(product.name, product.category);
   };
 
-  function arrayBufferToBase64(buffer) {
+/*   function arrayBufferToBase64(buffer) {
     let binary = '';
     let bytes = new Uint8Array(buffer);
     for (let i = 0; i < bytes.byteLength; i++) {
       binary += String.fromCharCode(bytes[i]);
     }
     return btoa(binary);
-  }
+  } */
           
     return (       
       <div className={`shopContent ${isProductInfoVisible ? 'productInfoVisible' : ''}`}>
