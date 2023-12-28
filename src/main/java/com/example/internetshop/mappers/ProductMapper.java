@@ -12,12 +12,12 @@ public interface ProductMapper {
     Product toEntity(CardProductDto cardProductDto);
 
     CardProductDto toDto(Product product);
-    default String toString(byte[] image) {
-        return image != null ? Base64.getEncoder().encodeToString(image) : null;
-    }
-    default byte[] toBytes(String image) {
-        return image != null ? Base64.getDecoder().decode(image) : null;
-    }
+//    default String toString(byte[] image) {
+//        return image != null ? Base64.getEncoder().encodeToString(image) : null;
+//    }
+//    default byte[] toBytes(String image) {
+//        return image != null ? Base64.getDecoder().decode(image) : null;
+//    }
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     Product partialUpdate(CardProductDto inventoryDto, @MappingTarget Product inventory);
 }

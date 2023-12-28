@@ -61,8 +61,8 @@ if (user.getPhone() == null || !user.getPhone().equals(userDto.getPhone())){
         Address address = webOrder.getAddress();
         address.setUser(user);
         // If address exists, retrieve it and connect it with the webOrder
-        if (addressDao.existsByAddressLine1IgnoreCaseAndAddressLine2IgnoreCase(address.getAddressLine1(), address.getAddressLine2())){
-            address = addressDao.findByAddressLine1IgnoreCaseAndAddressLine2IgnoreCase(address.getAddressLine1(), address.getAddressLine2());
+        if (addressDao.addressExists(address.getAddressLine1(), address.getAddressLine2())){
+            address = addressDao.findAddress(address.getAddressLine1(), address.getAddressLine2());
         }else {
             addressDao.save(address);
         }

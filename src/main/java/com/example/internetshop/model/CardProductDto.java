@@ -1,11 +1,11 @@
-package com.example.internetshop.dto;
+package com.example.internetshop.model;
 
 import lombok.Value;
 
 import java.io.Serializable;
 
 /**
- * DTO for {@link com.example.internetshop.model.Product}
+ * DTO for {@link Product}
  */
 @Value
 public class CardProductDto implements Serializable {
@@ -14,5 +14,4 @@ public class CardProductDto implements Serializable {
     Float price;
     byte[] image;
     String category;
-
 }
