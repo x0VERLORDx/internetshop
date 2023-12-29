@@ -3,12 +3,12 @@ package com.example.internetshop.mappers;
 import com.example.internetshop.dto.CardProductDto;
 import com.example.internetshop.model.Product;
 import java.util.Arrays;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-29T19:08:49+0200",
+    date = "2023-12-29T19:19:11+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
