@@ -12,12 +12,12 @@ import com.example.internetshop.model.WebOrder;
 import com.example.internetshop.model.WebOrderQuantities;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-29T20:14:38+0200",
+    date = "2023-12-29T20:36:34+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
