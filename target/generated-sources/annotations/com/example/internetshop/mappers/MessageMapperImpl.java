@@ -2,12 +2,12 @@ package com.example.internetshop.mappers;
 
 import com.example.internetshop.dto.MessageDto;
 import com.example.internetshop.model.Message;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-12-29T22:29:30+0200",
+    date = "2024-01-03T22:38:56+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component
