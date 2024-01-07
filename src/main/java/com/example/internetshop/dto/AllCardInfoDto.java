@@ -1,5 +1,6 @@
 package com.example.internetshop.dto;
 
+import com.example.internetshop.model.CardProductDto;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -8,9 +9,10 @@ import java.io.Serializable;
  * DTO for {@link com.example.internetshop.model.Inventory}
  */
 @Value
-public class InventoryDto implements Serializable {
-    //CardProductDto product;
+public class AllCardInfoDto implements Serializable {
+    Long id;
+    CardProductDto product;
     ColorDto color;
     SizeDto size;
-    boolean available;
+    Integer quantity;
 }

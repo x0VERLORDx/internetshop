@@ -1,5 +1,6 @@
 package com.example.internetshop.controller;
 
+import com.example.internetshop.dto.AllCardInfoDto;
 import com.example.internetshop.dto.CardProductDto;
 import com.example.internetshop.dto.InventoryDto;
 import com.example.internetshop.service.InventoryService;
@@ -26,4 +27,9 @@ public class CardController {
     public List<CardProductDto> getAllProducts(){
         return inventoryService.getAllProducts();
     }
+//@CrossOrigin
+//@GetMapping()
+//public List<AllCardInfoDto> getAllProducts(){
+//    return inventoryService.getAllProducts();
+//}
 }
