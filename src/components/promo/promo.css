@@ -57,3 +57,28 @@
     top: 25%;
     right: -12%;
 }
+
+@media only screen and (max-width: 768px) {
+    .promo {
+        padding: 20px; /* Измененные значения для мобильных устройств */
+    }
+
+    .conteiner {
+        padding: 0 20px; /* Измененные значения для мобильных устройств */
+    }
+
+    .promo__content {
+        flex-direction: column; /* Измененная ориентация для мобильных устройств */
+    }
+
+    .promo__slider,
+    .promo__img-container {
+        max-width: 100%; /* Заполнение ширины экрана для мобильных устройств */
+    }
+
+    .promoImg1,
+    .promoImg2,
+    .promoImg3 {
+        display: none; /* Скрытие изображений для мобильных устройств */
+    }
+}

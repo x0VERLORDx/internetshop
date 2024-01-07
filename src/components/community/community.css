@@ -55,3 +55,38 @@
 .community__page a:hover {
     border-bottom: 1px solid;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .community {
+        padding: 20px; /* Измененные значения для мобильных устройств */
+    }
+    
+    .conteiner {
+        padding: 0 20px; /* Измененные значения для мобильных устройств */
+    }
+    
+    .community__content {
+        flex-direction: column; /* Измененная ориентация для мобильных устройств */
+        gap: 20px; /* Убран отступ между элементами */
+        align-items: center; /* Выравнивание по центру для мобильных устройств */
+    }
+    
+    .community__slider,
+    .community__text {
+        max-width: 100%; /* Заполнение ширины экрана для мобильных устройств */
+    }
+    
+    .community__title1,
+    .community__title2,
+    .community__text {
+        text-align: center; /* Выравнивание по центру для мобильных устройств */
+    }
+    
+    .community__page a {
+        font-size: 16px; /* Измененные значения для мобильных устройств */
+        line-height: 1.3; /* Измененные значения для мобильных устройств */
+        letter-spacing: 0.3px; /* Измененные значения для мобильных устройств */
+        padding-bottom: 3px; /* Измененные значения для мобильных устройств */
+    }
+}

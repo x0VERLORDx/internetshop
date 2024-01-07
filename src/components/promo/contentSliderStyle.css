@@ -53,3 +53,34 @@
 .goMagazine:hover{
     background-color: #509498;
 }
+@media only screen and (max-width: 768px) {
+  .title1_slide {
+    padding-top: 50px;
+    font-size: 40px;
+    line-height: 44px;
+    max-width: 100%; /* Изменено для мобильных устройств */
+    text-align: center;
+  }
+
+  .title2_slide {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    width: 100%; /* Изменено для мобильных устройств */
+    text-align: center;
+  }
+
+  .btn_slider_shop {
+    flex-direction: column; /* Изменено для мобильных устройств */
+    padding-left: 0;
+    padding-bottom: 30px;
+    align-items: center;
+  }
+
+  .btn_arrowdown {
+    margin-bottom: 20px; /* Изменено для мобильных устройств */
+  }
+
+  .goMagazine {
+    padding: 15px 30px; /* Изменено для мобильных устройств */
+  }
+}
