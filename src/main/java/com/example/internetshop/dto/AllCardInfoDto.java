@@ -1,6 +1,5 @@
 package com.example.internetshop.dto;
 
-import com.example.internetshop.model.CardProductDto;
 import lombok.Value;
 
 import java.io.Serializable;

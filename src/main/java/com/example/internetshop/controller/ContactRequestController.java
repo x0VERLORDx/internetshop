@@ -18,8 +18,9 @@ public class ContactRequestController {
 
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity contactRequest(@RequestBody @Valid ContactRequestDto contactRequestDto){
+    public ResponseEntity<ContactRequestDto> contactRequest(@RequestBody @Valid ContactRequestDto contactRequestDto){
         contactRequestService.addRequest(contactRequestDto);
-        return ResponseEntity.ok().build();
+//        ContactRequestDto response =
+        return ResponseEntity.ok(contactRequestDto);
     }
 }
