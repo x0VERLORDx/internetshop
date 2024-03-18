@@ -10,7 +10,6 @@ import com.example.internetshop.mappers.InventoryMapper;
 import com.example.internetshop.mappers.ProductMapper;
 import com.example.internetshop.model.Inventory;
 import com.example.internetshop.model.Product;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +23,6 @@ public class InventoryService {
     private final InventoryMapper inventoryMapper;
     private final ProductMapper productMapper;
     private final AllCardInfoMapper allCardInfoMapper;
-    @Autowired
     public InventoryService(InventoryDao inventoryDao, ProductDao productDao, InventoryMapper inventoryMapper, ProductMapper productMapper, AllCardInfoMapper allCardInfoMapper) {
         this.inventoryDao = inventoryDao;
         this.productDao = productDao;
@@ -41,6 +39,7 @@ public class InventoryService {
         }
         return card;
     }
+    @Transactional(readOnly = true)
     public List<CardProductDto> getAllProducts (){
         List<CardProductDto> productDtoList = new ArrayList<>();
         List<Product> productList = productDao.findAll();

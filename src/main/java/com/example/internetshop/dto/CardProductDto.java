@@ -14,5 +14,8 @@ public class CardProductDto implements Serializable {
     Float price;
     byte[] image;
     String category;
+    String[] color ={"red","green"};
+    String [] size = {"L","M"};
+    boolean available = true;
 
 }

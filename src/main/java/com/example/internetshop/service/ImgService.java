@@ -2,7 +2,6 @@ package com.example.internetshop.service;
 
 import com.example.internetshop.dao.ImgDao;
 import com.example.internetshop.model.ImgTest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -11,7 +10,6 @@ import java.nio.file.Paths;
 
 @Service
 public class ImgService {
-    @Autowired
     private ImgDao imgDao;
 
     public void addImg() throws IOException{

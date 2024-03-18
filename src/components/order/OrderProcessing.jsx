@@ -28,7 +28,7 @@ const OrderProcessing = () => {
             data_order.paymentMethod = paymentMethod;
             console.log('Отправляемые данные на сервер:', JSON.stringify(data_order));
             // Отправка данных на сервер
-            const response = await fetch('http://localhost:8080/message', {
+            const response = await fetch('http://localhost:8080/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

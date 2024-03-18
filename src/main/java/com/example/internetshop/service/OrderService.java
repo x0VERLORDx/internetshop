@@ -9,8 +9,8 @@ import com.example.internetshop.model.User;
 import com.example.internetshop.model.WebOrder;
 import com.example.internetshop.model.WebOrderQuantities;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +23,6 @@ public class OrderService {
     private final UserDao userDao;
     private final WebOrderQuantitiesDao webOrderQuantitiesDao;
     private final WebOrderMapper webOrderMapper;
-    @Autowired
     public OrderService(OrderDao webOrderDao, ProductDao productDao, AddressDao addressDao, UserDao userDao, WebOrderQuantitiesDao webOrderQuantitiesDao, WebOrderMapper webOrderMapper) {
         this.orderDao = webOrderDao;
         this.productDao = productDao;
@@ -32,7 +31,7 @@ public class OrderService {
         this.webOrderQuantitiesDao = webOrderQuantitiesDao;
         this.webOrderMapper = webOrderMapper;
     }
-
+    @Transactional
     public WebOrderDto addOrder(WebOrderDto webOrderDto) {
         WebOrder webOrder = webOrderMapper.toEntity(webOrderDto);// Method to convert DTO to Entity
         UserDto userDto = webOrderDto.getUser();
