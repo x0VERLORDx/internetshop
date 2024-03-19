@@ -14,6 +14,7 @@ public class ProductDto implements Serializable {
 
     Integer id;
 
+
     @JsonCreator
     public ProductDto(@JsonProperty("id") Integer id) {
         this.id = id;

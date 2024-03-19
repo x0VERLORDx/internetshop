@@ -18,7 +18,7 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false, unique = true)
+    @Column(name = "name", unique = true)
     private String username;
     @JsonIgnore
     @Column(name = "password", length = 1000)

@@ -9,6 +9,8 @@ import java.io.Serializable;
  */
 @Value
 public class WebOrderQuantitiesDto implements Serializable {
-    ProductDto product;
+    Integer productId;
+    String color;
+    String size;
     Integer quantity;
 }

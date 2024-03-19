@@ -33,34 +33,33 @@ public class OrderService {
     }
     @Transactional
     public WebOrderDto addOrder(WebOrderDto webOrderDto) {
+        System.out.println(webOrderDto.toString());
         WebOrder webOrder = webOrderMapper.toEntity(webOrderDto);// Method to convert DTO to Entity
-        UserDto userDto = webOrderDto.getUser();
         User user = new User();
+//        if (userDto.getId()==0){
+            user.setUsername(webOrder.getUser().getFirstName());
+            user.setEmail(webOrder.getUser().getEmail());
+            user.setPhone(webOrder.getUser().getPhone());
 
-        if (userDto.getId()==0){
-            user.setUsername(userDto.getUsername());
-            user.setEmail(userDto.getEmail());
-            user.setPhone(userDto.getPhone());
-
-            Optional<User> existingUser = userDao.findByUsernameAndEmail(user.getUsername(), user.getEmail());
+            Optional<User> existingUser = userDao.findByEmail(user.getEmail());
             if (existingUser.isPresent()) {
                 user = existingUser.get();
 
             } else {
-
+                user.setUsername("guest");
                 userDao.save(user);
             }
-        } else {
-            user = userDao.findById(userDto.getId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
-        }
-if (user.getPhone() == null || !user.getPhone().equals(userDto.getPhone())){
-    user.setPhone(userDto.getPhone());
+//        } else {
+//            user = userDao.findById(userDto.getId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
+//        }
+if (user.getPhone() == null || !user.getPhone().equals(webOrder.getUser().getPhone())){
+    user.setPhone(webOrder.getUser().getPhone());
     userDao.updatePhoneById(user.getPhone(), user.getId());
 }
         Address address = webOrder.getAddress();
         address.setUser(user);
         // If address exists, retrieve it and connect it with the webOrder
-        if (addressDao.addressExists(address.getAddressLine1(), address.getAddressLine2())){
+        if (addressDao.addressExists(address.getCountry(), address.getCity(), address.getAddressLine1(), address.getAddressLine2())){
             address = addressDao.findAddress(address.getAddressLine1(), address.getAddressLine2());
         }else {
             addressDao.save(address);

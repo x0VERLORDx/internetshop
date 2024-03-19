@@ -16,6 +16,7 @@ public class OrderController {
     @CrossOrigin
     @PostMapping
     public WebOrderDto createOrder(@RequestBody WebOrderDto webOrderDto) {
+        System.out.println(webOrderDto.toString());
         return orderService.addOrder(webOrderDto);
     }
 

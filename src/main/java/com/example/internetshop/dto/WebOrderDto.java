@@ -1,6 +1,5 @@
 package com.example.internetshop.dto;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 
 import java.io.Serializable;
@@ -11,9 +10,13 @@ import java.util.List;
  */
 @Value
 public class WebOrderDto implements Serializable {
-    @NotNull
-    UserDto user;
-    @NotNull
-    AddressDto address;
-    List<WebOrderQuantitiesDto> orderQuantities;
+    String email;
+    String firstName;
+    String phone;
+    String country;
+    String city;
+    String addressLine1;
+    String addressLine2;
+    List<WebOrderQuantitiesDto> selectedItems;
+    String comment;
 }

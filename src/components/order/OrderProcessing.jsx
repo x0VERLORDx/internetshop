@@ -21,7 +21,10 @@ const OrderProcessing = () => {
         setSubmitting(true);
 
         // Добавление выбранного товара в данные заказа
-        data_order.selectedItems = orderData.items;
+       //const user = data_order.slice(0,3);
+       // console.log(data_order);
+       data_order.selectedItems = orderData.items;
+
 
         try {
             const paymentMethod = payCash ? 'Наличные' : 'Другой метод оплаты';
@@ -185,37 +188,23 @@ const OrderProcessing = () => {
 
                                 {errors.street && <p className="error-message">{errors.street.message}</p>}
                                 <Controller
-                                    name="street"
+                                    name="addressLine1"
                                     control={control}
                                     defaultValue=""
-                                    rules={{ required: 'Введіть вулицю' }}
+                                    rules={{ required: 'Введіть вулицю та номер будинку' }}
                                     render={({ field }) => (
                                         <input
                                             className={`modal_input_order ${errors.street ? 'error' : ''} ${isValid ? 'valid' : ''}`}
-                                            placeholder="вул. Хрещатик"
+                                            placeholder="вул. Хрещатик 23"
                                             {...field}
                                         />
                                     )}
                                 />
 
                                 {errors.home && <p className="error-message">{errors.home.message}</p>}
-                                <Controller
-                                    name="home"
-                                    control={control}
-                                    defaultValue=""
-                                    rules={{ required: 'Введіть номер дому' }}
-                                    render={({ field }) => (
-                                        <input
-                                            className={`modal_input_order ${errors.home ? 'error' : ''} ${isValid ? 'valid' : ''}`}
-                                            placeholder="буд. 27"
-                                            {...field}
-                                        />
-                                    )}
-                                />
 
-                                {errors.apartment && <p className="error-message">{errors.apartment.message}</p>}
                                 <Controller
-                                    name="apartment"
+                                    name="addressLine2"
                                     control={control}
                                     defaultValue=""
                                     rules={{ required: 'Введіть номер квартири' }}

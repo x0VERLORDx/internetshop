@@ -35,4 +35,7 @@ public class WebOrder {
     @OneToMany(mappedBy = "webOrder", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<WebOrderQuantities> orderQuantities = new ArrayList<>();
 
+    @Column(name = "comment")
+    private String comment;
+
 }

@@ -15,6 +15,12 @@ public class Address {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "country", nullable = false, length = 100)
+    private String country;
+
+    @Column(name = "city", nullable = false, length = 100)
+    private String city;
+
     @Column(name = "address_line_1", nullable = false, length = 555)
     private String addressLine1;
 
@@ -24,5 +30,6 @@ public class Address {
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
 
 }

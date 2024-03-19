@@ -138,7 +138,6 @@ const Basket = () => {
                     className='btn__subOrder'
           onClick={() => {
             // Передача данных на страницу обработки заказа
-               //state.items.getAll().setState({image:""})
               state.items.forEach((element) => delete(element.image));
               state.items.forEach((element) => delete(element.price));
               state.items.forEach((element) => delete(element.name));
